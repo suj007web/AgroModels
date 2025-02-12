@@ -5,3 +5,4 @@ Pillow
 numpy
 joblib
 scikit-learn
+gunicorn
