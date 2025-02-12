@@ -9,6 +9,7 @@ import joblib
 import pickle
 import numpy as np
 app = Flask(__name__)
+import os
 
 with open('class_labels.json', 'r') as f:
     class_labels = json.load(f)
@@ -185,4 +186,4 @@ def predict_yield():
             'error': f'No yield data available for crop {crop} in season {season}'
         }), 404
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=int(os.getenv("PORT", 5000)))
